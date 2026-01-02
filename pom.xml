@@ -85,7 +85,7 @@
 				<!-- This configuration allows the JUnit test runner to find the unit tests -->
 				<configuration>
 					<argLine>
-						--add-opens=com.acromere.zenna/com.acromere.zenna.util=ALL-UNNAMED
+						--add-opens=com.acromere.zenna/com.acromere.zenna.icon=ALL-UNNAMED
 					</argLine>
 				</configuration>
 			</plugin>
