@@ -5,6 +5,10 @@ import javafx.scene.paint.Color;
 
 public class FolderIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new FolderIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath( g( 0 ), g( 14 ) );
@@ -48,10 +52,6 @@ public class FolderIcon extends RenderedIcon {
 		lineTo( g( 26 ), g( 16 ) );
 		closePath();
 		fill( Color.BROWN );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new FolderIcon() );
 	}
 
 }

@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class ExclamationIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new ExclamationIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Bar
@@ -21,10 +25,6 @@ public class ExclamationIcon extends RenderedIcon {
 		addArc( g( 16 ), g( 26 ), g( 3 ), g( 3 ), 0, 360 );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new ExclamationIcon() );
 	}
 
 }

@@ -16,6 +16,10 @@ public class Hamburger3Icon extends RenderedIcon {
 
 	private static final double w = 26;
 
+	public static void main( String[] commands ) {
+		RenderedIcon.proof( new Hamburger3Icon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -24,16 +28,12 @@ public class Hamburger3Icon extends RenderedIcon {
 		addRow( r3 );
 		closePath();
 
-		setStrokeWidth(3);
+		setStrokeWidth( 3 );
 		draw();
 	}
 
 	private void addRow( double y ) {
 		addLine( g( e ), g( y ), g( w ), g( y ) );
-	}
-
-	public static void main( String[] commands ) {
-		RenderedIcon.proof( new Hamburger3Icon() );
 	}
 
 }

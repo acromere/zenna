@@ -2,6 +2,10 @@ package com.acromere.zenna.icon;
 
 public class PlusIcon extends SymbolIcon {
 
+	public static void main( String[] commands ) {
+		proof( new PlusIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -9,10 +13,6 @@ public class PlusIcon extends SymbolIcon {
 		addLine( g( 16 ), g( 16 - L ), g( 16 ), g( 16 + L ) );
 		closePath();
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new PlusIcon() );
 	}
 
 }

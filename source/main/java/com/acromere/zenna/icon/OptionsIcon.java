@@ -14,6 +14,10 @@ public class OptionsIcon extends RenderedIcon {
 
 	private static final int Y3 = 24;
 
+	public static void main( String[] commands ) {
+		proof( new OptionsIcon() );
+	}
+
 	@Override
 	protected void render() {
 		renderRows();
@@ -43,10 +47,6 @@ public class OptionsIcon extends RenderedIcon {
 		addArc( g( x + w - r ), g( y + r ), g( r ), g( r ), 270, 180 );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new OptionsIcon() );
 	}
 
 }

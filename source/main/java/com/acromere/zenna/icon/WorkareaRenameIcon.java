@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class WorkareaRenameIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new WorkareaRenameIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -31,10 +35,6 @@ public class WorkareaRenameIcon extends RenderedIcon {
 		addRect( g( 6 ), g( 12 ), g( 2 ), g( 8 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new WorkareaRenameIcon() );
 	}
 
 }

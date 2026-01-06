@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class CopyIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new CopyIcon() );
+	}
+
 	@Override
 	protected void render() {
 		backPage();
@@ -29,7 +33,7 @@ public class CopyIcon extends RenderedIcon {
 		addArc( g( 6 ), g( 20 ), g( 2 ), g( 2 ), 180, 90 );
 		lineTo( g( 10 ), g( 22 ) );
 		addArc( g( 14 ), g( 12 ), g( 4 ), g( 4 ), 180, -90 );
-		lineTo( g( 18), g(8));
+		lineTo( g( 18 ), g( 8 ) );
 		closePath();
 		fill();
 	}
@@ -52,10 +56,6 @@ public class CopyIcon extends RenderedIcon {
 		lineTo( g( 19 ), g( 23 ) );
 		lineTo( g( 19 ), g( 5 ) );
 		closePath();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new CopyIcon() );
 	}
 
 }

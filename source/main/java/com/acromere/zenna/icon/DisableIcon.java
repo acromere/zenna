@@ -4,13 +4,17 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class DisableIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new DisableIcon() );
+	}
+
 	@Override
 	protected void render() {
 		double r1 = 8;
 		double r2 = 12;
 		double t = r2 - r1;
 		double alpha = Math.toDegrees( Math.atan2( 0.5 * t, r1 ) );
-		double theta = Math.toRadians(45 - alpha);
+		double theta = Math.toRadians( 45 - alpha );
 		double x = r1 * Math.sin( theta );
 		double y = r1 * Math.cos( theta );
 
@@ -26,10 +30,6 @@ public class DisableIcon extends RenderedIcon {
 		closePath();
 
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new DisableIcon() );
 	}
 
 }

@@ -12,6 +12,10 @@ public class ZinniaSvgIcon extends SvgIcon {
 
 	private int layers = 2;
 
+	public static void main( String[] commands ) {
+		proof( new ZinniaSvgIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -65,10 +69,6 @@ public class ZinniaSvgIcon extends SvgIcon {
 		double x = radius * Math.cos( Math.toRadians( angleInDegrees ) );
 		double y = radius * Math.sin( Math.toRadians( angleInDegrees ) );
 		return circle( 16 + x, 16 + y, 1 );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new ZinniaSvgIcon() );
 	}
 
 }

@@ -56,6 +56,31 @@ public class JewelIcon extends SvgIcon {
 		fill( top(), Color.web( "#ffffff20" ) );
 	}
 
+	public static void main( String[] parameters ) {
+		Color amethyst = Color.web( "#402080a0" );
+		Color citrine = Color.web( "#c06000a0" );
+		Color diamond = Color.web( "#ffffff20" );
+		Color emerald = Color.web( "#208040a0" );
+		Color ruby = Color.web( "#800000a0" );
+		Color sapphire = Color.web( "#001060a0" );
+		Color topaz = Color.web( "#204080a0" );
+
+		try {
+			VectorImageWriter writer = new VectorImageWriter();
+			writer.save( (VectorIcon)new JewelIcon( amethyst ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-amethyst.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( citrine ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-citrine.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( diamond ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-diamond.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( emerald ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-emerald.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( ruby ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-ruby.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( sapphire ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-sapphire.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( topaz ).resize( 2048 ), Path.of( System.getProperty( "user.home" ) + "/Profile/etc/icons/gem-topaz.png" ) );
+		} catch( Exception e ) {
+			e.printStackTrace();
+		}
+		proof( new JewelIcon( ruby ) );
+		//System.exit( 0 );
+	}
+
 	@Override
 	@SuppressWarnings( "unchecked" )
 	public <T extends VectorImage> T copy() {
@@ -96,46 +121,11 @@ public class JewelIcon extends SvgIcon {
 		StringBuilder builder = new StringBuilder();
 		builder.append( "M" ).append( e.getX() ).append( " " ).append( e.getY() );
 		builder.append( "L" ).append( f.getX() ).append( " " ).append( f.getY() );
-		builder
-			.append( "A" )
-			.append( FACE_OUTER_RADIUS )
-			.append( " " )
-			.append( FACE_OUTER_RADIUS )
-			.append( " " )
-			.append( omega )
-			.append( " 0 1 0" )
-			.append( g.getX() )
-			.append( " " )
-			.append( g.getY() );
+		builder.append( "A" ).append( FACE_OUTER_RADIUS ).append( " " ).append( FACE_OUTER_RADIUS ).append( " " ).append( omega ).append( " 0 1 0" ).append( g.getX() ).append( " " ).append( g.getY() );
 		builder.append( "L" ).append( h.getX() ).append( " " ).append( h.getY() );
 		builder.append( "Z" );
 
 		return builder.toString();
-	}
-
-	public static void main( String[] parameters ) {
-		Color amethyst = Color.web( "#402080a0" );
-		Color citrine = Color.web( "#c06000a0" );
-		Color diamond = Color.web( "#ffffff20" );
-		Color emerald = Color.web( "#208040a0" );
-		Color ruby = Color.web( "#800000a0" );
-		Color sapphire = Color.web( "#001060a0" );
-		Color topaz = Color.web( "#204080a0" );
-
-		try {
-			VectorImageWriter writer = new VectorImageWriter();
-			writer.save( (VectorIcon)new JewelIcon( amethyst ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-amethyst.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( citrine ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-citrine.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( diamond ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-diamond.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( emerald ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-emerald.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( ruby ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-ruby.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( sapphire ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-sapphire.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( topaz ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-topaz.png" ) );
-		} catch( Exception e ) {
-			e.printStackTrace();
-		}
-		proof( new JewelIcon( ruby ) );
-		//System.exit( 0 );
 	}
 
 }

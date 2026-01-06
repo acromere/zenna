@@ -5,32 +5,6 @@ import javafx.geometry.Point2D;
 
 public class WingArcIcon extends SvgIcon {
 
-	double POINT_RADIUS;
-
-	double BACK_RADIUS;
-
-	double DISC_RADIUS;
-
-	double zx;
-
-	double zy;
-
-	double yx;
-
-	double yy;
-
-	double xx;
-
-	double xy;
-
-	double wx;
-
-	double wy;
-
-	double vx;
-
-	double vy;
-
 	protected double bx;
 
 	protected double by;
@@ -58,6 +32,32 @@ public class WingArcIcon extends SvgIcon {
 	protected double rightArcStartAngleDeg;
 
 	protected double rightArcSpanAngleDeg;
+
+	double POINT_RADIUS;
+
+	double BACK_RADIUS;
+
+	double DISC_RADIUS;
+
+	double zx;
+
+	double zy;
+
+	double yx;
+
+	double yy;
+
+	double xx;
+
+	double xy;
+
+	double wx;
+
+	double wy;
+
+	double vx;
+
+	double vy;
 
 	public WingArcIcon() {
 		POINT_RADIUS = 2;
@@ -89,17 +89,17 @@ public class WingArcIcon extends SvgIcon {
 	protected String wing() {
 		StringBuilder wing = new StringBuilder();
 
-		System.out.println( "start=" + frontStartAngleDeg + " extent=" + frontSpanAngleDeg);
+		System.out.println( "start=" + frontStartAngleDeg + " extent=" + frontSpanAngleDeg );
 
 		wing.append( arc( true, zx, zy, POINT_RADIUS, -frontStartAngleDeg, -frontSpanAngleDeg ) );
 		wing.append( "L" + bx + "," + by + " " );
-		wing.append( arc(  yx, yy, POINT_RADIUS, -leftArcStartAngleDeg, -leftArcSpanAngleDeg ) );
+		wing.append( arc( yx, yy, POINT_RADIUS, -leftArcStartAngleDeg, -leftArcSpanAngleDeg ) );
 		//wing.append( "L" + dx + "," + dy + " " );
-		wing.append( arc(  xx, xy+9, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
+		wing.append( arc( xx, xy + 9, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
 		//wing.append( "L" + fx + "," + fy + " " );
-		wing.append( arc(  wx, wy, POINT_RADIUS, -rightArcStartAngleDeg, -rightArcSpanAngleDeg ) );
+		wing.append( arc( wx, wy, POINT_RADIUS, -rightArcStartAngleDeg, -rightArcSpanAngleDeg ) );
 
-		wing.append("Z");
+		wing.append( "Z" );
 
 		return wing.toString();
 	}

@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class GuideIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new GuideIcon() );
+	}
+
 	@Override
 	protected void render() {
 		setDrawWidth( g( 2 ) );
@@ -33,10 +37,6 @@ public class GuideIcon extends RenderedIcon {
 		//		drawCenteredOval( g( 11 ), g( 5 ), g( 4 ), g( 4 ) );
 		//		drawCenteredOval( g( 21 ), g( 15 ), g( 4 ), g( 4 ) );
 		//		drawCenteredOval( g( 21 ), g( 27 ), g( 4 ), g( 4 ) );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new GuideIcon() );
 	}
 
 }

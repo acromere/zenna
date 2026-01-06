@@ -22,6 +22,10 @@ public class GearIcon extends SvgIcon {
 
 	private static final double ANGLE_OVER_2 = 0.5 * ANGLE;
 
+	public static void main( String[] parameters ) {
+		proof( new GearIcon() );
+	}
+
 	protected void define() {
 		super.define();
 		StringBuilder path = new StringBuilder();
@@ -30,7 +34,7 @@ public class GearIcon extends SvgIcon {
 			path.append( tooth( angle, index == 0 ? "M" : "L" ) );
 		}
 		path.append( "Z" );
-		path.append( circle( C,C,AXEL_RADIUS ));
+		path.append( circle( C, C, AXEL_RADIUS ) );
 		fill( path.toString() );
 	}
 
@@ -53,10 +57,6 @@ public class GearIcon extends SvgIcon {
 		double iy2 = C + INNER_RADIUS * Math.sin( ia2 );
 
 		return " " + command + " " + ox1 + " " + oy1 + " L " + ox2 + " " + oy2 + " L " + ix1 + " " + iy1 + " L " + ix2 + " " + iy2;
-	}
-
-	public static void main( String[] parameters ) {
-		proof( new GearIcon() );
 	}
 
 }

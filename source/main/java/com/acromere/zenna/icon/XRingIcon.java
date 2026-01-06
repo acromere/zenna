@@ -55,6 +55,12 @@ public class XRingIcon extends XIcon {
 		innerRingMin = innerRingMax * innerTilt;
 	}
 
+	public static void main( String[] commands ) {
+		proof( new XRingIcon() );
+		//save( new XRingIcon(), new File( System.getProperty( "user.home" ), "Downloads/xenon.png" ) );
+		//save( new XRingIcon(), "../../software/xenon/source/main/assembly/xenon.png");
+	}
+
 	protected void render() {
 		double sqrt8 = Math.sqrt( 8 );
 		double dr = getTr() + sqrt8;
@@ -133,12 +139,6 @@ public class XRingIcon extends XIcon {
 		ringPaintStops.add( new Stop( 0.6, RING_HIGHLIGHT ) );
 		ringPaintStops.add( new Stop( 0.9, RING_BASE ) );
 		return radialPaint( g( 16 ), (1 / outerTilt) * g( 16 ), g( 11 ), ringPaintStops );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new XRingIcon() );
-		//save( new XRingIcon(), new File( System.getProperty( "user.home" ), "Downloads/xenon.png" ) );
-		//save( new XRingIcon(), "../../software/xenon/source/main/assembly/xenon.png");
 	}
 
 }

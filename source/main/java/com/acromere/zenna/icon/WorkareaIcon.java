@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class WorkareaIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new WorkareaIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -13,10 +17,6 @@ public class WorkareaIcon extends SvgIcon {
 
 		String icon = borderOut + " " + borderIn + " " + workarea;
 		fill( icon );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new WorkareaIcon() );
 	}
 
 }

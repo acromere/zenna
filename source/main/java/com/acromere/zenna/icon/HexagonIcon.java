@@ -22,6 +22,19 @@ public class HexagonIcon extends SvgIcon {
 		c = 16;
 	}
 
+	public static void main( String[] commands ) {
+		proof( new HexagonIcon() );
+		try {
+			//new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 2048, 2048 );
+			Path home = Paths.get( System.getProperty( "user.home" ) );
+			Path icons = home.resolve( "Profile/etc/icons" );
+			new VectorImageWriter().save( (VectorIcon)new HexagonIcon().resize( 2048 ), icons.resolve( "graphene.png" ) );
+			Platform.exit();
+		} catch( Exception e ) {
+			e.printStackTrace();
+		}
+	}
+
 	protected void define() {
 		super.define();
 		double r = 10;
@@ -56,19 +69,6 @@ public class HexagonIcon extends SvgIcon {
 		path += circle( c + x, c + y, size );
 
 		return path;
-	}
-
-	public static void main( String[] commands ) {
-		proof( new HexagonIcon() );
-		try {
-			//new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 2048, 2048 );
-			Path home = Paths.get( System.getProperty( "user.home" ) );
-			Path icons = home.resolve( "Profile/etc/icons" );
-			new VectorImageWriter().save( (VectorIcon)new HexagonIcon().resize( 2048 ), icons.resolve( "graphene.png" ) );
-			Platform.exit();
-		} catch( Exception e ) {
-			e.printStackTrace();
-		}
 	}
 
 }

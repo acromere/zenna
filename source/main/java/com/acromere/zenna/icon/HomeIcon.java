@@ -6,6 +6,10 @@ public class HomeIcon extends RenderedIcon {
 
 	private static final double sqrt8 = Math.sqrt( 8 );
 
+	public static void main( String[] args ) {
+		proof( new HomeIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Roof
@@ -54,10 +58,6 @@ public class HomeIcon extends RenderedIcon {
 		//		lineTo( g( 29 ), g( 17 ) );
 		//		closePath();
 		//		fillAndDraw( GradientTone.LIGHT );
-	}
-
-	public static void main( String[] args ) {
-		proof( new HomeIcon() );
 	}
 
 }

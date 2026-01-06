@@ -1,7 +1,6 @@
 package com.acromere.zenna.icon;
 
 import com.acromere.zerra.image.Proof;
-import com.acromere.zerra.image.SvgIcon;
 import javafx.scene.paint.Color;
 
 public class AcromereIcon extends WingArcIcon {

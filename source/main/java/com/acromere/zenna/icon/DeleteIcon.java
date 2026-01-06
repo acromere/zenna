@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class DeleteIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new DeleteIcon() );
+	}
+
 	@Override
 	protected void render() {
 		render2();
@@ -66,10 +70,6 @@ public class DeleteIcon extends RenderedIcon {
 		closePath();
 		fill();
 		restore();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new DeleteIcon() );
 	}
 
 }

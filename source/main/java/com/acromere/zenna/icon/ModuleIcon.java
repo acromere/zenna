@@ -10,6 +10,10 @@ public class ModuleIcon extends RenderedIcon {
 
 	private static final double g = 1;
 
+	public static void main( String[] commands ) {
+		proof( new ModuleIcon() );
+	}
+
 	@Override
 	protected void render() {
 		setStrokeWidth( g( l ) );
@@ -30,10 +34,6 @@ public class ModuleIcon extends RenderedIcon {
 		closePath();
 		fill();
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new ModuleIcon() );
 	}
 
 }

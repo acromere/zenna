@@ -15,6 +15,10 @@ public class ToggleIcon extends RenderedIcon {
 		this.enabled = enabled;
 	}
 
+	public static void main( String[] commands ) {
+		RenderedIcon.proof( new ToggleIcon( false ) );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -36,10 +40,6 @@ public class ToggleIcon extends RenderedIcon {
 		T copy = super.copy();
 		((ToggleIcon)copy).enabled = this.enabled;
 		return copy;
-	}
-
-	public static void main( String[] commands ) {
-		RenderedIcon.proof( new ToggleIcon( false ) );
 	}
 
 }

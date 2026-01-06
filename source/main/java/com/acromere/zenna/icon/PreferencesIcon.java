@@ -26,6 +26,10 @@ public class PreferencesIcon extends RenderedIcon {
 
 	private static final double w = 3;
 
+	public static void main( String[] commands ) {
+		RenderedIcon.proof( new PreferencesIcon() );
+	}
+
 	@Override
 	protected void render() {
 		save();
@@ -89,15 +93,11 @@ public class PreferencesIcon extends RenderedIcon {
 	private void knob() {
 		startPath();
 		moveTo( 0, 0 );
-//		addArc( 0, 0, g( 4 ), g( 4 ), 0, 360 );
-//		moveTo( 0, 0 );
+		//		addArc( 0, 0, g( 4 ), g( 4 ), 0, 360 );
+		//		moveTo( 0, 0 );
 		addArc( 0, 0, g( r ), g( r ), 0, 360 );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		RenderedIcon.proof( new PreferencesIcon() );
 	}
 
 }

@@ -10,6 +10,10 @@ public class FileSystemIcon extends RenderedIcon {
 
 	private final double s = 4;
 
+	public static void main( String[] args ) {
+		proof( new FileSystemIcon() );
+	}
+
 	@Override
 	protected void render() {
 		move( g( 0 ), g( 1.5 * s ) );
@@ -45,10 +49,6 @@ public class FileSystemIcon extends RenderedIcon {
 		addOval( g( 16 ), g( 16 ), g( w ), g( h ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] args ) {
-		proof( new FileSystemIcon() );
 	}
 
 }

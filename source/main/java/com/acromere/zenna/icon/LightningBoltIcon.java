@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class LightningBoltIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new LightningBoltIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -15,9 +19,6 @@ public class LightningBoltIcon extends SvgIcon {
 
 		// Thick
 		//add( "M17,3 L5,19 L18,19 L15,29 L27,13 L14,13 Z" );
-	}
-	public static void main( String[] commands ) {
-		proof( new LightningBoltIcon() );
 	}
 
 }

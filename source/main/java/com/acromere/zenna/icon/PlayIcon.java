@@ -2,6 +2,10 @@ package com.acromere.zenna.icon;
 
 public class PlayIcon extends SymbolIcon {
 
+	public static void main( String[] commands ) {
+		proof( new PlayIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -11,10 +15,6 @@ public class PlayIcon extends SymbolIcon {
 		closePath();
 		fill();
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new PlayIcon() );
 	}
 
 }

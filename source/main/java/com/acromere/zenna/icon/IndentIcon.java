@@ -5,9 +5,13 @@ import javafx.scene.shape.StrokeLineCap;
 
 public class IndentIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new IndentIcon() );
+	}
+
 	@Override
 	protected void render() {
-		setDrawWidth( g(2) );
+		setDrawWidth( g( 2 ) );
 		startPath();
 		moveTo( g( 7 ), g( 11 ) );
 		lineTo( g( 13 ), g( 16 ) );
@@ -24,10 +28,6 @@ public class IndentIcon extends RenderedIcon {
 		addLine( g( 16 ), g( 19 ), g( 26 ), g( 19 ) );
 		addLine( g( 6 ), g( 25 ), g( 26 ), g( 25 ) );
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new IndentIcon() );
 	}
 
 }

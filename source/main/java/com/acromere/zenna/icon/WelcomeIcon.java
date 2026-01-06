@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class WelcomeIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new WelcomeIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -13,10 +17,6 @@ public class WelcomeIcon extends SvgIcon {
 		String tr = arc( 26, 6, 2, 0, -90 );
 		String icon = "M6,4 " + tl + " L4,26 " + bl + " L26,28 " + br + " L28,6 " + tr + " Z";
 		fill( icon );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new WelcomeIcon() );
 	}
 
 }

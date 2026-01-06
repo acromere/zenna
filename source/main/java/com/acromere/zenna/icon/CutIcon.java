@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class CutIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new CutIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Bottom Scissor
@@ -28,7 +32,7 @@ public class CutIcon extends RenderedIcon {
 
 		// Left Wave
 		wave();
-		move(g(3),g(3));
+		move( g( 3 ), g( 3 ) );
 		wave();
 		reset();
 
@@ -44,11 +48,11 @@ public class CutIcon extends RenderedIcon {
 		curveTo( g( 17 ), g( 23 ), g( 17 ), g( 19 ), g( 16 ), g( 17 ) );
 		// Top Handle
 		moveTo( g( 20 ), g( 23 ) );
-		curveTo(g(21),g(25),g(22),g(27),g(22),g(29));
+		curveTo( g( 21 ), g( 25 ), g( 22 ), g( 27 ), g( 22 ), g( 29 ) );
 		addArc( g( 21 ), g( 29 ), g( 1 ), g( 1 ), 0, -90 );
 		addArc( g( 21 ), g( 27 ), g( 3 ), g( 3 ), 270, -90 );
-		lineTo(g(18),g(25));
-		addArc(g(20),g(25),g(2),g(2),180,-90);
+		lineTo( g( 18 ), g( 25 ) );
+		addArc( g( 20 ), g( 25 ), g( 2 ), g( 2 ), 180, -90 );
 		closePath();
 		fill();
 
@@ -64,10 +68,6 @@ public class CutIcon extends RenderedIcon {
 		curveTo( g( 14 ), g( 4 ), g( 10 ), g( 16 ), g( 2 ), g( 16 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new CutIcon() );
 	}
 
 }

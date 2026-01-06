@@ -6,9 +6,13 @@ import javafx.scene.paint.Color;
 
 public class ThemeIcon extends RenderedIcon {
 
+	public static void main( String[] args ) {
+		proof( new ThemeIcon() );
+	}
+
 	@Override
 	protected void render() {
-		Color d = Color.web( "804080");
+		Color d = Color.web( "804080" );
 		Color d0 = Colors.mix( d, Color.WHITE, 0.6 );
 		Color d1 = Colors.mix( d, Color.WHITE, 0.4 );
 		Color d2 = Colors.mix( d, Color.WHITE, 0.2 );
@@ -16,7 +20,7 @@ public class ThemeIcon extends RenderedIcon {
 		Color f0 = Colors.mix( f, Color.WHITE, 0.6 );
 		Color f1 = Colors.mix( f, Color.WHITE, 0.4 );
 		Color f2 = Colors.mix( f, Color.WHITE, 0.2 );
-		Color g = Color.web( "408040");
+		Color g = Color.web( "408040" );
 		Color g0 = Colors.mix( g, Color.WHITE, 0.6 );
 		Color g1 = Colors.mix( g, Color.WHITE, 0.4 );
 		Color g2 = Colors.mix( g, Color.WHITE, 0.2 );
@@ -30,12 +34,12 @@ public class ThemeIcon extends RenderedIcon {
 		startPath();
 		addArc( g( 6 ), g( 26 ), g( 5 ), g( 5 ), 0, 360 );
 		closePath();
-		fill( Color.web( "808080") );
+		fill( Color.web( "808080" ) );
 
 		startPath();
 		addArc( g( 6 ), g( 26 ), g( 2 ), g( 2 ), 0, 360 );
 		closePath();
-		fill(Color.web( "606060"));
+		fill( Color.web( "606060" ) );
 	}
 
 	private void renderSwatch( Color a, Color b, Color c ) {
@@ -64,10 +68,6 @@ public class ThemeIcon extends RenderedIcon {
 		addRect( g( 23 ), g( 21 ), g( w ), g( h ) );
 		closePath();
 		fill( c );
-	}
-
-	public static void main( String[] args ) {
-		proof( new ThemeIcon() );
 	}
 
 }

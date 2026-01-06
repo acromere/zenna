@@ -16,6 +16,10 @@ public class BulletListIcon extends RenderedIcon {
 
 	private static final double w = 26;
 
+	public static void main( String[] commands ) {
+		proof( new BulletListIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -29,10 +33,6 @@ public class BulletListIcon extends RenderedIcon {
 	private void addRow( double y ) {
 		addLine( g( e ), g( y ), g( e ), g( y ) );
 		addLine( g( e + gap ), g( y ), g( w ), g( y ) );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new BulletListIcon() );
 	}
 
 }

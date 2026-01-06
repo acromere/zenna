@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class WrenchIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new WrenchIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -59,10 +63,6 @@ public class WrenchIcon extends SvgIcon {
 		String a7 = "A6,6,0,0,1,9.741657386773946,18.258342613226056";
 
 		fill( start + l1 + a1 + l2 + a2 + l3 + a3 + l4 + l5 + a5 + l6 + a6 + l7 + a7 + "Z" );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new WrenchIcon() );
 	}
 
 }

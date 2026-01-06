@@ -9,6 +9,18 @@ import javafx.scene.paint.Color;
  */
 public class WingDiscIcon extends RenderedIcon {
 
+	// Gray 400
+	private final Color wingColor = Color.web( "#BDBDBD" );
+
+	// Gray 300
+	private final Color wingHighlight = Color.web( "#E0E0E0" );
+
+	// Teal 300
+	private final Color discColor = Color.web( "#4DB6AC" );
+
+	// Teal 50
+	private final Color discHighlight = Color.web( "#E0F2F1" );
+
 	double POINT_RADIUS;
 
 	double DISC_RADIUS;
@@ -61,18 +73,6 @@ public class WingDiscIcon extends RenderedIcon {
 
 	private double rightArcSpanAngleDeg;
 
-	// Gray 400
-	private final Color wingColor = Color.web( "#BDBDBD" );
-
-	// Gray 300
-	private final Color wingHighlight = Color.web( "#E0E0E0" );
-
-	// Teal 300
-	private final Color discColor = Color.web( "#4DB6AC" );
-
-	// Teal 50
-	private final Color discHighlight = Color.web( "#E0F2F1" );
-
 	public WingDiscIcon() {
 		POINT_RADIUS = g( 2 );
 		DISC_RADIUS = g( 5 );
@@ -86,6 +86,10 @@ public class WingDiscIcon extends RenderedIcon {
 		wy = g( 25 );
 		vx = xx;
 		vy = xy;
+	}
+
+	public static void main( String[] commands ) {
+		proof( new WingDiscIcon() );
 	}
 
 	@Override
@@ -175,10 +179,6 @@ public class WingDiscIcon extends RenderedIcon {
 
 		fx = wx - Math.cos( backTangentAngle ) * POINT_RADIUS;
 		fy = wy + Math.sin( backTangentAngle ) * POINT_RADIUS;
-	}
-
-	public static void main( String[] commands ) {
-		proof( new WingDiscIcon() );
 	}
 
 }

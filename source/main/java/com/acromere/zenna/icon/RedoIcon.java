@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class RedoIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new RedoIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -19,10 +23,6 @@ public class RedoIcon extends RenderedIcon {
 		closePath();
 
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new RedoIcon() );
 	}
 
 }

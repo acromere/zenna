@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class DocumentIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new DocumentIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Page
@@ -85,10 +89,6 @@ public class DocumentIcon extends RenderedIcon {
 		lineTo( g( 28 ), g( 10 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new DocumentIcon() );
 	}
 
 }

@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class FloppyDiskIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new FloppyDiskIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Disk
@@ -29,10 +33,6 @@ public class FloppyDiskIcon extends RenderedIcon {
 		lineTo( g( 20 ), g( 30 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new FloppyDiskIcon() );
 	}
 
 }

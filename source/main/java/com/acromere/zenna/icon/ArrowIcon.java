@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class ArrowIcon extends SymbolIcon {
 
+	public static void main( String[] commands ) {
+		RenderedIcon.proof( new ArrowIcon() );
+	}
+
 	@Override
 	protected void render() {
 		rotate();
@@ -20,9 +24,5 @@ public class ArrowIcon extends SymbolIcon {
 	}
 
 	protected void rotate() {}
-
-	public static void main( String[] commands ) {
-		RenderedIcon.proof( new ArrowIcon() );
-	}
 
 }

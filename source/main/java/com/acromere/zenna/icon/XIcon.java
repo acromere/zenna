@@ -20,6 +20,10 @@ public class XIcon extends RenderedIcon {
 		this.tr = Math.sqrt( 2 * (this.radius * this.radius) );
 	}
 
+	public static void main( String[] commands ) {
+		proof( new XIcon() );
+	}
+
 	protected double getRadius() {
 		return radius;
 	}
@@ -59,10 +63,6 @@ public class XIcon extends RenderedIcon {
 		lineTo( g( 16 ), g( 16 + tr ) );
 		addArc( g( 32 - inset ), g( 32 - inset ), g( radius ), g( radius ), 225, 180 );
 		lineTo( g( 16 + tr ), g( 16 ) );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new XIcon() );
 	}
 
 }

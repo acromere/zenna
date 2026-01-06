@@ -28,6 +28,11 @@ public class ZinniaIcon extends RenderedIcon {
 		setStyle( primary + secondary );
 	}
 
+	public static void main( String[] commands ) {
+		//save( new ZinniaIcon(), "target/icons/zinnia.png" );
+		proof( new ZinniaIcon() );
+	}
+
 	@Override
 	protected void render() {
 		double spacing = 360.0 / likeness;
@@ -36,7 +41,7 @@ public class ZinniaIcon extends RenderedIcon {
 		for( int layer = 0; layer < layers; layer++ ) {
 			// Lower layer
 			for( int index = 0; index < likeness; index++ ) {
-				drawPetal(layer == 0 ?  getStrokePaint(): getPrimaryPaint() );
+				drawPetal( layer == 0 ? getStrokePaint() : getPrimaryPaint() );
 				spin( g( 16 ), g( 16 ), spacing );
 			}
 			// Upper layer
@@ -65,7 +70,7 @@ public class ZinniaIcon extends RenderedIcon {
 		setFillPaint( centerPaint );
 		startPath();
 		addOval( g( 16 ), g( 16 ), g( centerRadius ), g( centerRadius ) );
-		fill(getSecondaryPaint());
+		fill( getSecondaryPaint() );
 
 		drawStamen( 10 );
 		drawStamen( 130 );
@@ -79,13 +84,8 @@ public class ZinniaIcon extends RenderedIcon {
 		double y = radius * Math.sin( Math.toRadians( angleInDegrees ) );
 
 		startPath();
-		addOval( g( 16 + x ), g( 16 + y ), g(1), g(1) );
+		addOval( g( 16 + x ), g( 16 + y ), g( 1 ), g( 1 ) );
 		fill( Color.YELLOW );
-	}
-
-	public static void main( String[] commands ) {
-		//save( new ZinniaIcon(), "target/icons/zinnia.png" );
-		proof( new ZinniaIcon() );
 	}
 
 }

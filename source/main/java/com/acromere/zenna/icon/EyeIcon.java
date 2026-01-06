@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class EyeIcon extends SvgIcon {
 
+	public static void main( String[] args ) {
+		proof( new EyeIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -13,10 +17,6 @@ public class EyeIcon extends SvgIcon {
 
 		// Lids
 		draw( "M2,16 A17.5,17.5,0,0,0,30,16 M2,16 A17.5,17.5,0,0,1,30,16", 2 );
-	}
-
-	public static void main( String[] args ) {
-		proof( new EyeIcon() );
 	}
 
 }

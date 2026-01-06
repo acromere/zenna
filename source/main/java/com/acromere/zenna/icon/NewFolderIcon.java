@@ -2,6 +2,10 @@ package com.acromere.zenna.icon;
 
 public class NewFolderIcon extends FolderIcon {
 
+	public static void main( String[] commands ) {
+		proof( new NewFolderIcon() );
+	}
+
 	@Override
 	protected void render() {
 		save();
@@ -38,10 +42,6 @@ public class NewFolderIcon extends FolderIcon {
 		lineTo( g( 24 ), g( 2 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new NewFolderIcon() );
 	}
 
 }

@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class QuestionIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new QuestionIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Squiggle
@@ -24,10 +28,6 @@ public class QuestionIcon extends RenderedIcon {
 		addArc( g( 16 ), g( 26 ), g( 3 ), g( 3 ), 0, 360 );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new QuestionIcon() );
 	}
 
 }

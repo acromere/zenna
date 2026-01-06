@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class LightningIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new LightningIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Bolt
@@ -17,10 +21,6 @@ public class LightningIcon extends RenderedIcon {
 		lineTo( g( 21 ), g( 5 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new LightningIcon() );
 	}
 
 }

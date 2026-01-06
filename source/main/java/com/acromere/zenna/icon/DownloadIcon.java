@@ -8,6 +8,10 @@ public class DownloadIcon extends RenderedIcon {
 
 	private static final double sqrt32 = Math.sqrt( 32 );
 
+	public static void main( String[] commands ) {
+		proof( new DownloadIcon() );
+	}
+
 	@Override
 	protected void render() {
 		double y = 4;
@@ -31,15 +35,11 @@ public class DownloadIcon extends RenderedIcon {
 		closePath();
 		clip();
 
-		startPath( g( 16 ), g( cy+4 ) );
-		addArc( g( 16 ), g( cy+4 ), g( 12 ), g( 6 ), 0, 360 );
+		startPath( g( 16 ), g( cy + 4 ) );
+		addArc( g( 16 ), g( cy + 4 ), g( 12 ), g( 6 ), 0, 360 );
 		closePath();
 		fill();
 		restore();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new DownloadIcon() );
 	}
 
 }

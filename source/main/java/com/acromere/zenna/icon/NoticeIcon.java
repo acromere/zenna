@@ -11,6 +11,10 @@ public class NoticeIcon extends RenderedIcon {
 		setStrokePaint( color );
 	}
 
+	public static void main( String[] commands ) {
+		proof( new NoticeIcon( Color.GREEN ) );
+	}
+
 	@Override
 	protected void render() {
 		int w = 28;
@@ -26,10 +30,6 @@ public class NoticeIcon extends RenderedIcon {
 		closePath();
 
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new NoticeIcon( Color.GREEN ) );
 	}
 
 }

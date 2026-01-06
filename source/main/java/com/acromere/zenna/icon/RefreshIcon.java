@@ -9,6 +9,10 @@ public class RefreshIcon extends RenderedIcon {
 
 	private static final double CY = 16;
 
+	public static void main( String[] commands ) {
+		proof( new RefreshIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// The outside radius of the arrow circle
@@ -79,10 +83,6 @@ public class RefreshIcon extends RenderedIcon {
 
 	private double rotate( double value ) {
 		return -(value - 16) + 16;
-	}
-
-	public static void main( String[] commands ) {
-		proof( new RefreshIcon() );
 	}
 
 }

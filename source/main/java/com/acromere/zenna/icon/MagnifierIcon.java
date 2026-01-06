@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class MagnifierIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new MagnifierIcon() );
+	}
+
 	protected void define() {
 		super.define();
 
@@ -14,10 +18,6 @@ public class MagnifierIcon extends SvgIcon {
 		// Glass
 		restore();
 		draw( circle( 12, 12, 9 ), 0.5 * getStrokeWidth() );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new MagnifierIcon() );
 	}
 
 }

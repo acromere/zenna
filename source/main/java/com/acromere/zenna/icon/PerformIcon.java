@@ -4,6 +4,10 @@ import com.acromere.zerra.image.SvgIcon;
 
 public class PerformIcon extends SvgIcon {
 
+	public static void main( String[] commands ) {
+		proof( new PerformIcon() );
+	}
+
 	protected void define() {
 		super.define();
 		double ox = 16;
@@ -18,10 +22,6 @@ public class PerformIcon extends SvgIcon {
 		draw( arc( true, ox, oy, 5, 45, -90 ), 2 );
 		draw( arc( true, ox, oy, 9, 45, -90 ), 2 );
 		draw( arc( true, ox, oy, 13, 45, -90 ), 2 );
-	}
-
-	public static void main( String[] commands ) {
-		proof( new PerformIcon() );
 	}
 
 }

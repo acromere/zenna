@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class UndoIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new UndoIcon() );
+	}
+
 	@Override
 	protected void render() {
 		startPath();
@@ -19,10 +23,6 @@ public class UndoIcon extends RenderedIcon {
 		closePath();
 
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new UndoIcon() );
 	}
 
 }

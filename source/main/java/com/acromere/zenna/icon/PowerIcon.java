@@ -9,6 +9,10 @@ public class PowerIcon extends RenderedIcon {
 
 	private final double radius = g( 12 );
 
+	public static void main( String[] commands ) {
+		proof( new PowerIcon() );
+	}
+
 	@Override
 	protected void render() {
 		renderWithStroke();
@@ -24,10 +28,6 @@ public class PowerIcon extends RenderedIcon {
 		double angle = 35;
 		addArc( center.getX(), center.getY(), radius, radius, 90 + angle, 360 - (2 * angle) );
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new PowerIcon() );
 	}
 
 }

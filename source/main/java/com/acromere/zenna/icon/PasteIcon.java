@@ -4,6 +4,10 @@ import com.acromere.zerra.image.RenderedIcon;
 
 public class PasteIcon extends RenderedIcon {
 
+	public static void main( String[] commands ) {
+		proof( new PasteIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Board
@@ -28,10 +32,6 @@ public class PasteIcon extends RenderedIcon {
 		addRect( g( 10 ), g( 10 ), g( 12 ), g( 16 ) );
 		closePath();
 		fill();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new PasteIcon() );
 	}
 
 }

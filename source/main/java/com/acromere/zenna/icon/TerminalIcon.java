@@ -5,6 +5,10 @@ import javafx.scene.paint.Color;
 
 public class TerminalIcon extends RenderedIcon {
 
+	public static void main( String[] args ) {
+		proof( new TerminalIcon() );
+	}
+
 	@Override
 	protected void render() {
 		// Screen
@@ -27,10 +31,6 @@ public class TerminalIcon extends RenderedIcon {
 		lineTo( g( 21 ), g( 21 ) );
 		setStrokeWidth( g( 2 ) );
 		draw();
-	}
-
-	public static void main( String[] args ) {
-		proof( new TerminalIcon() );
 	}
 
 }
