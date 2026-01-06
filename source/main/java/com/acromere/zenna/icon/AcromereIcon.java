@@ -3,7 +3,7 @@ package com.acromere.zenna.icon;
 import com.acromere.zerra.image.Proof;
 import javafx.scene.paint.Color;
 
-public class AcromereIcon extends WingArcIcon {
+public class AcromereIcon extends WingArcLargeIcon {
 
 	protected double ACRO_RADIUS;
 
