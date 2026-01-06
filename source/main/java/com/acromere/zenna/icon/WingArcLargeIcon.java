@@ -6,8 +6,8 @@ import javafx.scene.paint.Color;
 public class WingArcLargeIcon extends WingArcIcon {
 
 	public WingArcLargeIcon() {
-		POINT_RADIUS = 3;
-		DISC_RADIUS = 7;
+		this.POINT_RADIUS = 3;
+		this.DISC_RADIUS = 7;
 
 		zx = 16;
 		zy = 4;
@@ -23,6 +23,8 @@ public class WingArcLargeIcon extends WingArcIcon {
 
 		vx = 16;
 		vy = 23;
+
+		calculateNumbers();
 	}
 
 	public static void main( String[] commands ) {

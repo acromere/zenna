@@ -1,13 +1,19 @@
 package com.acromere.zenna.icon;
 
+import com.acromere.zerra.image.Proof;
 import com.acromere.zerra.image.SvgIcon;
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 
 public class WingArcIcon extends SvgIcon {
 
 	protected double bx;
 
 	protected double by;
+
+	protected double cx;
+
+	protected double cy;
 
 	protected double dx;
 
@@ -16,6 +22,10 @@ public class WingArcIcon extends SvgIcon {
 	protected double fx;
 
 	protected double fy;
+
+	protected double tx;
+
+	protected double ty;
 
 	protected double frontStartAngleDeg;
 
@@ -33,42 +43,40 @@ public class WingArcIcon extends SvgIcon {
 
 	protected double rightArcSpanAngleDeg;
 
-	double POINT_RADIUS;
+	protected double POINT_RADIUS;
 
-	double BACK_RADIUS;
+	protected double BACK_RADIUS;
 
-	double DISC_RADIUS;
+	protected double DISC_RADIUS;
 
-	double zx;
+	protected double zx;
 
-	double zy;
+	protected double zy;
 
-	double yx;
+	protected double yx;
 
-	double yy;
+	protected double yy;
 
-	double xx;
+	protected double xx;
 
-	double xy;
+	protected double xy;
 
-	double wx;
+	protected double wx;
 
-	double wy;
+	protected double wy;
 
-	double vx;
+	protected double vx;
 
-	double vy;
+	protected double vy;
 
 	public WingArcIcon() {
 		POINT_RADIUS = 2;
-		BACK_RADIUS = 8;
 		DISC_RADIUS = 5;
 		zx = 16;
 		zy = 7;
 		yx = 7;
 		yy = 25;
 		xx = 16;
-		// TODO This may need to be calculated
 		xy = 22;
 		wx = 25;
 		wy = 25;
@@ -83,20 +91,15 @@ public class WingArcIcon extends SvgIcon {
 		super.define();
 
 		fill( wing() );
-
 	}
 
 	protected String wing() {
 		StringBuilder wing = new StringBuilder();
 
-		System.out.println( "start=" + frontStartAngleDeg + " extent=" + frontSpanAngleDeg );
-
 		wing.append( arc( true, zx, zy, POINT_RADIUS, -frontStartAngleDeg, -frontSpanAngleDeg ) );
-		wing.append( "L" + bx + "," + by + " " );
+		wing.append( "L" ).append( bx ).append( "," ).append( by ).append( " " );
 		wing.append( arc( yx, yy, POINT_RADIUS, -leftArcStartAngleDeg, -leftArcSpanAngleDeg ) );
-		//wing.append( "L" + dx + "," + dy + " " );
-		wing.append( arc( xx, xy + 9, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
-		//wing.append( "L" + fx + "," + fy + " " );
+		wing.append( arc( tx, ty, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
 		wing.append( arc( wx, wy, POINT_RADIUS, -rightArcStartAngleDeg, -rightArcSpanAngleDeg ) );
 
 		wing.append( "Z" );
@@ -104,19 +107,7 @@ public class WingArcIcon extends SvgIcon {
 		return wing.toString();
 	}
 
-	private void arrow() {
-		//		startPath();
-		//		addArc( zx, zy, POINT_RADIUS, POINT_RADIUS, frontStartAngleDeg, frontSpanAngleDeg );
-		//		lineTo( bx, by );
-		//		addArc( yx, yy, POINT_RADIUS, POINT_RADIUS, leftArcStartAngleDeg, leftArcSpanAngleDeg );
-		//		lineTo( dx, dy );
-		//		addArc( xx, xy, POINT_RADIUS, POINT_RADIUS, backArcStartAngleDeg, backArcSpanAngleDeg );
-		//		lineTo( fx, fy );
-		//		addArc( wx, wy, POINT_RADIUS, POINT_RADIUS, rightArcStartAngleDeg, rightArcSpanAngleDeg );
-		//		closePath();
-	}
-
-	private void calculateNumbers() {
+	protected void calculateNumbers() {
 		double frontTangent = (yy - zy) / (zx - yx);
 		double frontNormal = 1 / frontTangent;
 		double frontNormalAngle = Math.atan( frontNormal );
@@ -141,19 +132,33 @@ public class WingArcIcon extends SvgIcon {
 		backArcStartAngleDeg = Math.toDegrees( Math.PI - backTangentAngle );
 		backArcSpanAngleDeg = Math.toDegrees( -backNormalAngle * 2 );
 
-		// NEXT Create a new back arc radius to span the whole wing
-
 		rightArcStartAngleDeg = 180 + Math.toDegrees( backTangentAngle );
 		rightArcSpanAngleDeg = 90 + frontStartAngleDeg + Math.toDegrees( backNormalAngle );
 
 		bx = yx - Math.cos( frontNormalAngle ) * POINT_RADIUS;
 		by = yy - Math.sin( frontNormalAngle ) * POINT_RADIUS;
 
+		cx = yx + Math.cos( backNormalAngle ) * POINT_RADIUS;
+		cy = yy + Math.sin( backNormalAngle ) * POINT_RADIUS;
+
 		dx = xx - Math.cos( backTangentAngle ) * POINT_RADIUS;
 		dy = xy - Math.sin( backTangentAngle ) * POINT_RADIUS;
 
 		fx = wx - Math.cos( backTangentAngle ) * POINT_RADIUS;
 		fy = wy + Math.sin( backTangentAngle ) * POINT_RADIUS;
+
+		// Calculate the radius of the back arc
+		adj = xx - cx;
+		opp = adj * Math.tan( backTangentAngle );
+		BACK_RADIUS = Math.sqrt( Math.pow( opp, 2 ) + Math.pow( adj, 2 ) );
+
+		// Calculate the center of the back arc
+		tx = xx;
+		ty = cy + opp;
+	}
+
+	public static void main( String[] commands ) {
+		Proof.proof( new WingArcIcon(), Color.web( "#206080" ), null );
 	}
 
 }
