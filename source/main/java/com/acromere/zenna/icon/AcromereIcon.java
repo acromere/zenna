@@ -8,8 +8,6 @@ public class AcromereIcon extends WingArcLargeIcon {
 	protected double ACRO_RADIUS;
 
 	public AcromereIcon() {
-		ACRO_RADIUS = POINT_RADIUS + 2;
-
 		calculateNumbers();
 	}
 
@@ -23,8 +21,6 @@ public class AcromereIcon extends WingArcLargeIcon {
 
 		fill( wing() );
 		fill( acromere(), getPrimaryPaint() );
-
-
 	}
 
 	private String acromere() {
@@ -39,7 +35,6 @@ public class AcromereIcon extends WingArcLargeIcon {
 		wing.append( arc( yx, yy, POINT_RADIUS, -leftArcStartAngleDeg, -leftArcSpanAngleDeg ) );
 		wing.append( arc( tx, ty, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
 		wing.append( arc( wx, wy, POINT_RADIUS, -rightArcStartAngleDeg, -rightArcSpanAngleDeg ) );
-
 		wing.append( "Z" );
 
 		return wing.toString();
@@ -49,7 +44,7 @@ public class AcromereIcon extends WingArcLargeIcon {
 	protected void calculateNumbers() {
 		super.calculateNumbers();
 
-		// TODO Calculate a few more points
+		ACRO_RADIUS = POINT_RADIUS + 2;
 	}
 
 }

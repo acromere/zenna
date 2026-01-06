@@ -101,7 +101,6 @@ public class WingArcIcon extends SvgIcon {
 		wing.append( arc( yx, yy, POINT_RADIUS, -leftArcStartAngleDeg, -leftArcSpanAngleDeg ) );
 		wing.append( arc( tx, ty, BACK_RADIUS, -backArcStartAngleDeg, -backArcSpanAngleDeg ) );
 		wing.append( arc( wx, wy, POINT_RADIUS, -rightArcStartAngleDeg, -rightArcSpanAngleDeg ) );
-
 		wing.append( "Z" );
 
 		return wing.toString();
