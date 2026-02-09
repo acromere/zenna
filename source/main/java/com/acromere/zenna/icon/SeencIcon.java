@@ -10,18 +10,17 @@ public class SeencIcon extends SvgIcon {
 
 	protected void define() {
 		super.define();
-		fill( "M2,14 L30,14 L18,4 L18,10 L2,10 Z" );
-		fill( "M2,18 L14,28 L14,22 L30,22 L30,18 Z");
 
-		// Triangles
-		//fill( "M15,2 L12,16 L14,16 L17,30 L20,16 L18,16 Z" );
+		double B = 2;
+		double C = 16;
+		double E = 32;
+		double D = 1;
+		double S = 2;
+		double T = S + 4;
+		double U = T + 4;
 
-		// Thin
-		//fill( "M16,1 L11,19 L16,19 L16,31 L21,13 L16,13 Z" );
-
-		// Thick
-		//add( "M17,3 L5,19 L18,19 L15,29 L27,13 L14,13 Z" );
+		fill( "M" + B + "," + (C - S) + " L" + (E - B) + "," + (C - S) + " L" + (C + D) + "," + (C - U) + " L" + (C + D) + "," + (C - T) + " L" + B + "," + (C - T) + " Z" );
+		fill( "M" + B + "," + (C + S) + " L" + (C - D) + "," + (C + U) + " L" + (C - D) + "," + (C + T) + " L" + (E - B) + "," + (C + T) + " L" + (E - B) + "," + (C + S) + " Z" );
 	}
-
 
 }
