@@ -1,4 +1,4 @@
-name: Acromere Zenna CI
+name: Zenna CI
 
 on:
   push:
